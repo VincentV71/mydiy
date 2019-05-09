@@ -1,0 +1,464 @@
+.navbar {
+  background-color: #38353a;
+}
+.navbar .navbar-brand {
+  color: #888888;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #fafafa;
+}
+.navbar .navbar-text {
+  color: #888888;
+}
+.navbar .navbar-text a {
+  color: #fafafa;
+}
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+  color: #fafafa; 
+}
+.navbar .navbar-nav .nav-link {
+  color: #888888;
+  border-radius: .25rem;
+  margin: 0 0.25em;
+}
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+  color: #fafafa;
+}
+.navbar .navbar-nav .dropdown-menu {
+  background-color: #38353a;
+  border-color: #49484a;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  color: #888888;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+  color: #fafafa;
+  background-color: #49484a;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-divider {
+  border-top-color: #49484a;
+}
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+  color: #fafafa;
+  background-color: #49484a;
+}
+.navbar .navbar-toggle {
+  border-color: #49484a;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #49484a;
+}
+.navbar .navbar-toggle .navbar-toggler-icon {
+  color: #888888;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #888888;
+}
+.navbar .navbar-link {
+  color: #888888;
+}
+.navbar .navbar-link:hover {
+  color: #fafafa;
+}
+
+/*____________CONTENU ________________*/
+
+.button .btn .btn-light .btn-lg .btn-block:hover{
+  cursor: pointer;
+}
+
+.jumbotron {
+  background: linear-gradient(120deg,#ffd428,#ffc209);
+}
+
+.button {
+  background: yellow;
+}
+
+div.justify-content-center>div> a {
+  text-decoration: none;
+  }
+
+.jumbotron > button:hover,
+.jumbotron > button:focus {
+  background: yellow;
+}
+
+#logoNav {
+	position : left;
+}
+
+.spacer {
+	margin-top : 20px;
+}
+
+/*_______ COULEURS Etats du STEEP __________*/
+.card {
+  /*height: 585px; */
+  height: 100%;
+  border-radius: 15px;
+  position:relative;
+  display:flex;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.card-block {
+  /*height: 100%;*/
+  border-radius: 0 0 15px 15px;
+  background-color: white;
+}
+
+.steep {
+	background-color: #ffc209; 
+	text-align : center;
+}
+.prete {
+	background-color: #c0392b; 
+	text-align : center;
+}
+.finie {
+	background-color: #1dd2af; 
+	text-align : center;
+}
+/*____recette inactive : _____*/
+.non {
+  background-color: #a3b1b2; 
+  text-align : center;
+}
+
+.prete .cartouche  {
+  color: white;
+}
+div.cartouche p.pb-2{
+  font-size: 20px; 
+  height:25px;
+}
+div.cartouche h3{
+  font-family:'Saira Condensed', sans-serif;
+}
+div.card-block p{
+  font-size: 16px;
+}
+div.card-block div.badge{
+  font-size: 16px; 
+  height: 25px;
+}
+div.card-block ul{
+  font-size: 14px;
+} 
+div.card-block ul li,
+div.card-block ul li span,
+div.row button{
+  margin: auto;
+}
+button.dropdown-item{
+  background-color: white;
+}
+textarea.w-95 {
+  width: 95%;
+  margin: 0px auto;
+}
+/*______Container Recette*/
+div#rctContainer {
+  /*background-color : #ffd428;*/
+  background-image: url("../img/ribbon_recette.png");
+  background-position: center top;
+  background-size:100%;
+  background-repeat:no-repeat;
+  max-width : 600px;
+  height : 365px; 
+  margin-right: auto;
+  margin-left: auto;
+}
+div#rctContainer h1{
+  font-size : 26px;
+}
+div#spacerRecet{
+  padding-top: 135px;
+}
+.col-6.d-flex.justify-content-center.font-weight-light {
+    min-height: 36px;
+}
+span#afficheMsg,
+span#afficheConfirm{
+  padding-left:15px;
+}
+/*____New_Diy*/
+select#choix_arome{
+  margin-bottom: 5px;
+}
+input#choix_dosage{
+  width: 75px;
+}
+.alert.alert-warning.ng-hide{
+  font-size: 0.85em;
+}
+#hr_spacer{
+  margin: 35px 0 20px 0;
+}
+input#total_recette{
+  width: 100px;
+  margin-left: 5px;
+}
+/*page ADMIN*/
+div.table-responsive span h5  {
+  background-color: #ffd428;
+  margin: 20px 0 0 0;
+  padding-left: 10px;
+  height: 25px;
+}
+thead {
+  color: #fafafa;
+  background-color: #49484a;
+}
+div#zoneModif {
+  background-color: #49484a;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 20px 40px 20px;
+  margin: 0px;
+}
+div#zoneCrea {
+  background-color: #49484a;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 20px 40px 20px;
+  margin: 0px;
+}
+div#zoneCrea div.row {
+  padding-top: 10px;
+}
+
+p.showMessage{
+  display:inline-block;
+  margin-left: 10px;
+}
+
+/*___Media Queries*/
+
+@media (max-width: 450px){
+  div#spacerRecet{
+  padding-top: 50px;
+  }
+  div#rctContainer {
+    height : 310px;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #888888;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #fafafa;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #fafafa;
+    background-color: #49484a;
+  }
+  div#rctContainer h1{
+  font-size : 22px;
+  }
+ div#spacerRecet{
+  padding-top: 85px;
+  }
+  .col-6.d-flex.justify-content-center.font-weight-light {
+    min-height: 32px;
+  }
+  div#rctContainer {
+    height : 285px;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px){
+  div#spacerRecet{
+  padding-top: 115px;
+  }
+  div#rctContainer {
+    height : 310px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #888888;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #fafafa;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #fafafa;
+    background-color: #49484a;
+  }
+  div#rctContainer h1{
+  margin-right : 0px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #888888;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #fafafa;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #fafafa;
+    background-color: #49484a;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #888888;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #fafafa;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #fafafa;
+    background-color: #49484a;
+  }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+  color: #888888;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+  color: #fafafa;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+  color: #fafafa;
+  background-color: #49484a;
+}
+
+/*§§§§§§§§§§§§§§§§§§§§§§§§§§§
+SLIDER*/
+
+.progress-box {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.progress-box .percentage-cur .num {
+  margin-right: 5px;
+}
+
+.progress-box .progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #f2f1f1;
+  margin-bottom: 3px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0 0 2px #D5D4D4 inset;
+  position: relative;
+}
+div.progress-bar{
+  margin-top:10px;
+}
+
+.progress-box .progress-bar .inner {
+  position: relative;
+  width: 0;
+  height:100%;
+  background: #239bd6; 
+}
+
+.progress-bar .inner {
+  height: 0;
+  width: 0;
+  transition: all 1s ease-out;
+}
+
+.progress-bar-slider .inner {
+  transition: none;
+}
+
+.progress-bar-slider .inner:after {
+  content: " ";
+  width: 5px;
+  height: 14px;;
+  background-color:#ccc;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  margin: 0px;
+}
+
+.progress-slider {
+  opacity: 0;
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/*DESACTIVER LE "+" et "-" DES INPUT Type="number" :*/
+
+/* Firefox */
+input[type=number]#mlArome,
+input[type=number]#mlBase  {
+    -moz-appearance: textfield;
+}
+/* Chrome */
+input#mlArome,
+input#mlBase{ 
+  -webkit-appearance: none;
+  margin:0;
+}
+/* Opéra*/
+input#mlArome,
+input#mlBase { 
+  -o-appearance: none;
+  margin:0
+}
+input[type=number]#choix_dosage{ 
+  width: 55px;
+}
+
+
+
+/*Colorize dropdown
+Bookmark your permalink
+https://work.smarchal.com/twbscolor/index.php
+https://work.smarchal.com/twbscolor/4.0.0/css/7305b260187ff9fafae6e6e60
+
+Include Bootstrap assets
+
+//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js
+//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
+
+Copy the generated SCSS/SASS/LESS/CSS
+
+    SCSS
+    SASS
+    LESS
+    CSS*/
+

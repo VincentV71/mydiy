@@ -1,0 +1,605 @@
+[{
+		"label": "ACTION",
+		"content": [{
+				"ID_ACT": 0,
+				"NOM_ACT": "Afficher"
+			},
+			{
+				"ID_ACT": 1,
+				"NOM_ACT": "Créer"
+			},
+			{
+				"ID_ACT": 2,
+				"NOM_ACT": "Modifier"
+			},
+			{
+				"ID_ACT": 3,
+				"NOM_ACT": "Supprimer"
+			}
+		]
+	},
+	{
+		"label": "TABLE",
+		"content": [{
+				"ID_TABL": 2,
+				"NOM_TABL": "User"
+			},
+			{
+				"ID_TABL": 3,
+				"NOM_TABL": "Recette"
+			},
+			{
+				"ID_TABL": 4,
+				"NOM_TABL": "Arome"
+			},
+			{
+				"ID_TABL": 5,
+				"NOM_TABL": "Prix"
+			},
+			{
+				"ID_TABL": 6,
+				"NOM_TABL": "Avis"
+			},
+			{
+				"ID_TABL": 7,
+				"NOM_TABL": "Base"
+			}
+		]
+	},
+	{
+		"label": "USER",
+		"attribut": [{
+				"NAME": "ID_USER",
+				"LEGEND": "ID User",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "NOM_USER",
+				"LEGEND": "Nom",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9]+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "20"
+			},
+			{
+				"NAME": "MAIL_USER",
+				"LEGEND": "Mail",
+				"TYPE": "",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$",
+				"MINLENGTH" : "5",
+				"MAXLENGTH" : "35"
+			},
+			{
+				"NAME": "AFF_USER",
+				"LEGEND": "Affichage",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "3"
+			},
+			{
+				"NAME": "PASSWD",
+				"LEGEND": "Password",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[a-zA-Z0-9_]{3,20}$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "20"
+			}
+		]
+	},
+	{
+		"label": "RECETTE",
+		"attribut": [{
+				"NAME": "ID_RECET",
+				"LEGEND": "ID recette",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_USER",
+				"LEGEND": "ID user",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_BASE",
+				"LEGEND": "ID base",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "DAT_RECET",
+				"LEGEND": "Date création",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "false",
+				"REGEX": "",
+				"MINLENGTH" : "",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "QTE_ARO",
+				"LEGEND": "Qté arôme",
+				"TYPE": "number",
+				"MIN": "0.1",
+				"MAX": "500",
+				"STEP": "0.1",
+				"SHOW": "true",
+				"REGEX": "^[0-9]+[0-9]*(\\.|\\,)?[0-9]?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "QTE_BAS",
+				"LEGEND": "Qté base",
+				"TYPE": "number",
+				"MIN": "2.5",
+				"MAX": "990",
+				"STEP": "0.1",
+				"SHOW": "true",
+				"REGEX": "^[1-9]+[0-9]*(\\.|\\,)?[0-9]?$",
+				"MINLENGTH" : "",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "QTE_TOT",
+				"LEGEND": "Qté totale",
+				"TYPE": "number",
+				"MIN": "5",
+				"MAX": "1000",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "4"
+			},
+			{
+				"NAME": "DAT_STEE",
+				"LEGEND": "Date Steep",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "false",
+				"REGEX": "",
+				"MINLENGTH" : "",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ETA_STEE",
+				"LEGEND": "Etat Steep",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "",
+				"MINLENGTH" : "5",
+				"MAXLENGTH" : "5"
+			},
+			{
+				"NAME": "COM_USER",
+				"LEGEND": "Commentaire",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9][A-Za-z0-9\\s\\,\\?\\.\\;\\:\\!\\%\\€\\é\\è\\ê\\ô\\û\\â\\à\\(\\)\\-\\+\\*\/\\-\\'\"\\=]+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "70"
+			},
+			{
+				"NAME": "AFF_RECET",
+				"LEGEND": "Affichage",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "3"
+			},
+			{
+				"NAME": "ETOILES",
+				"LEGEND": "Etoiles",
+				"TYPE": "number",
+				"MIN": "0",
+				"MAX": "5",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[0-5]?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "1"
+			}
+		]
+	},
+	{
+		"label": "AROME",
+		"attribut": [{
+				"NAME": "ID_ARO",
+				"LEGEND": "ID",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "NOM_ARO",
+				"LEGEND": "Nom",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9][A-Za-z0-9\\s\\-\\']+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "25"
+			},
+			{
+				"NAME": "FAB_ARO",
+				"LEGEND": "Fabricant",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9][A-Za-z0-9\\s\\-\\']+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "35"
+			},
+			{
+				"NAME": "DOS_FAB",
+				"LEGEND": "Dosage",
+				"TYPE": "number",
+				"MIN": "5",
+				"MAX": "50",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "NB_J_STEE",
+				"LEGEND": "Steep",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "100",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "3"
+			},
+			{
+				"NAME": "CAT_ARO",
+				"LEGEND": "Categorie",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "^[A-Za-z][A-Za-z\\s\\-\\'\\é\\è\\ê\\â\\û\\ô\\à\\î]+$",
+				"SHOW": "true",
+				"REGEX": "",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "35"
+			},
+			{
+				"NAME": "AFF_ARO",
+				"LEGEND": "Affichage",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "3"
+			}
+		]
+	},
+	{
+		"label": "PRIX",
+		"attribut": [{
+				"NAME": "ID_PRIX",
+				"LEGEND": "ID Prix",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_ARO",
+				"LEGEND": "ID Arôme",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "PRIX",
+				"LEGEND": "Prix",
+				"TYPE": "number",
+				"MIN": "0.05",
+				"MAX": "100",
+				"STEP": "0.05",
+				"SHOW": "true",
+				"REGEX": "^[0-9]?[0-9]*(\\.|\\,)?[0-9]?[05]?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "QTE_BTLLE",
+				"LEGEND": "Quantité (ml)",
+				"TYPE": "number",
+				"MIN": "10",
+				"MAX": "50",
+				"STEP": "0.5",
+				"SHOW": "true",
+				"REGEX": "^[1-9]?[0-9]*(\\.|\\,)?[05]?$",
+				"MINLENGTH" : "2",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "FOURNIS",
+				"LEGEND": "Fournisseur",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9][A-Za-z0-9\\s\\-\\']+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "40"
+			},
+			{
+				"NAME": "E_COM",
+				"LEGEND": "Lien web",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^(www\\.)[a-z0-9][a-z0-9\\-]+[a-z0-9](\\.\\w{2,3})+$",
+				"MINLENGTH" : "10",
+				"MAXLENGTH" : "40"
+			}
+		]
+	},
+	{
+		"label": "AVIS",
+		"attribut": [{
+				"NAME": "ID_AVIS",
+				"LEGEND": "ID Avis",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_USER",
+				"LEGEND": "ID User",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_RECET",
+				"LEGEND": "ID Recette",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "TEXT_AVI",
+				"LEGEND": "Commentaire",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^[A-Za-z0-9][A-Za-z0-9\\s\\,\\?\\.\\;\\:\\!\\%\\€\\é\\è\\ê\\ô\\û\\â\\à\\(\\)\\-\\+\\*\/\\-\\'\"\\=]+$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "70"
+			},
+			{
+				"NAME": "NOTE_AVI",
+				"LEGEND": "Note",
+				"TYPE": "number",
+				"MIN": "0",
+				"MAX": "5",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[0-5]?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "1"
+			},
+			{
+				"NAME": "DATE_AVI",
+				"LEGEND": "Date",
+				"TYPE": "number",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "false",
+				"REGEX": "",
+				"MINLENGTH" : "",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "AFF_AVI",
+				"LEGEND": "Affichage",
+				"TYPE": "text",
+				"MIN": "",
+				"MAX": "",
+				"STEP": "",
+				"SHOW": "true",
+				"REGEX": "^(oui|non)$",
+				"MINLENGTH" : "3",
+				"MAXLENGTH" : "3"
+			}
+		]
+	},
+	{
+		"label": "BASE",
+		"attribut": [{
+				"NAME": "ID_BASE",
+				"LEGEND": "ID Base",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "11",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "2"
+			},
+			{
+				"NAME": "DOS_PG",
+				"LEGEND": "PG (%)",
+				"TYPE": "number",
+				"MIN": "0",
+				"MAX": "100",
+				"STEP": "10",
+				"SHOW": "true",
+				"REGEX": "^([1][0][0])|([1-9][0]|[0])$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "3"
+			},
+			{
+				"NAME": "DOS_VG",
+				"LEGEND": "VG (%)",
+				"TYPE": "number",
+				"MIN": "0",
+				"MAX": "100",
+				"STEP": "10",
+				"SHOW": "true",
+				"REGEX": "^([1][0][0])|([1-9][0]|[0])$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : "3"
+			},
+			{
+				"NAME": "CORRECTIF",
+				"LEGEND": "Correctif",
+				"TYPE": "number",
+				"MIN": "0.1",
+				"MAX": "2",
+				"STEP": "0.1",
+				"SHOW": "true",
+				"REGEX": "^[0-2](\\.[0-9]|\\,[0-9])?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			}
+		]
+	},
+	{
+		"label": "PARFUMER",
+		"attribut": [{
+				"NAME": "ID_RECET",
+				"LEGEND": "ID recette",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "false",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "ID_ARO",
+				"LEGEND": "ID Arôme",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "",
+				"STEP": "1",
+				"SHOW": "true",
+				"REGEX": "^[1-9][0-9]*$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			},
+			{
+				"NAME": "DOS_ARO",
+				"LEGEND": "Dosage",
+				"TYPE": "number",
+				"MIN": "1",
+				"MAX": "50",
+				"STEP": "0.1",
+				"SHOW": "true",
+				"REGEX": "^[1-5]?[0-9]*(\\.|\\,)?[0-9]?$",
+				"MINLENGTH" : "1",
+				"MAXLENGTH" : ""
+			}
+		]
+	}
+]
