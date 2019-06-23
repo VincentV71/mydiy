@@ -19,9 +19,7 @@ require __DIR__ . '../../model/Recette.php';
 require __DIR__ . '../../model/User.php';
 require __DIR__ . '/validators/ValidatorFactory.php';
 
-$postdata = [];
-$postdata = json_decode(file_get_contents('php://input'), true);
-$propertiesdata = json_decode(file_get_contents(__DIR__ .'../../model/json/forAdmin.json'), true);
+$postData = json_decode(file_get_contents('php://input'), true);
 
 try{
 	// Si id de session existe :
@@ -30,10 +28,10 @@ try{
 	
 	$idUser = htmlspecialchars($_SESSION['id']);
 	$idUser = (int)$idUser;
-	$postdata['ID_USER'] = $idUser;
+	$postData['ID_USER'] = $idUser;
 	
 	// Si toutes les clés contiennent une valeur :
-	foreach ($postdata as $value) {
+	foreach ($postData as $value) {
 	    if ( is_null($value) ) throw new Exception("une des valeurs n'est pas renseignée.");
 	}
 	
@@ -42,28 +40,28 @@ try{
 	$today = $today->format('Y-m-d');//Format Date pour MySql
 	
 	// Récupère l'ID Arome, puis NB J STEEP, calcule la date fin de steep :
-	$aromeSelected = $postdata['ID_ARO'];
-	$dosageSelected = $postdata['DOS_ARO'];
+	$aromeSelected = $postData['ID_ARO'];
+	$dosageSelected = $postData['DOS_ARO'];
 	$myAromeManager = new AromeManager();
 	$nbJourSteep = $myAromeManager->getSteep($aromeSelected);
 	$steep = new DateTime ('+'.$nbJourSteep.' day');
 	$steep = $steep->format('Y-m-d');//Format Date pour MySql
 	// Entre les dates dans le tableau :
-	$postdata['DAT_RECET'] = $today;
-	$postdata['DAT_STEE'] = $steep;
-	$postdata['ETA_STEE'] = "STEEP";
-	$postdata['AFF_RECET'] = "oui";
-	$postdata['COM_USER'] = "";
-	$postdata['ETOILES'] = "";
+	$postData['DAT_RECET'] = $today;
+	$postData['DAT_STEE'] = $steep;
+	$postData['ETA_STEE'] = "STEEP";
+	$postData['AFF_RECET'] = "oui";
+	$postData['COM_USER'] = "";
+	$postData['ETOILES'] = "";
 		
 	// Contrôles, instanciations des objets :
-	Logic::allIdExist($postdata);
-	ValidatorFactory::control ($postdata, 'Recette');
-	$myRecette = new Recette ($postdata);
+	Logic::allIdExist($postData);
+	ValidatorFactory::control ($postData, 'Recette');
+	$myRecette = new Recette ($postData);
 	
-	ValidatorFactory::control ($postdata, 'Parfumer');
-	Logic::recetteValid($postdata, $myRecette);
-	$myParfumer = new Parfumer ($postdata);
+	ValidatorFactory::control ($postData, 'Parfumer');
+	Logic::recetteValid($postData, $myRecette);
+	$myParfumer = new Parfumer ($postData);
 
 	// Transaction avec Objets Recette et Parfumer :
 	$myRecetteManager = new RecetteManager;

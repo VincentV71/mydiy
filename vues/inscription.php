@@ -66,14 +66,14 @@ require __DIR__ . '/static/bibliotheque.php';
 				<div class="form-group row">
 					<label for="pass" class="col-sm-4 col-form-label text-left"><h5>Entrez votre mot de passe : </h5></label>
 						<div class="col-sm-8">
-							<input name="pass" type="text" class="form-control" id="pass" required>
+							<input name="pass" type="password" class="form-control" id="pass" required>
 						</div>
 				</div>
 
 				<div class="form-group row">
 					<label for="confpass" class="col-sm-4 col-form-label text-left"><h5>Confirmez votre mot de passe : </h5></label>
 						<div class="col-sm-8">
-							<input name="confpass" type="text" class="form-control" id="confpass" required>
+							<input name="confpass" type="password" class="form-control" id="confpass" required>
 						</div>
 				</div>
 
@@ -96,5 +96,5 @@ require __DIR__ . '/static/bibliotheque.php';
     <script src="static/js/jquery-3.1.1.slim.min.js"  type="text/javascript"></script>
     <script src="static/js/tether.min.js"  type="text/javascript"></script>
     <script src="static/js/bootstrap.min.js"  type="text/javascript"></script>
- -->  </body>
+  </body>
 </html>

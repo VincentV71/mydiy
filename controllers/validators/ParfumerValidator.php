@@ -57,15 +57,11 @@ class ParfumerValidator {
 	    }
 	}
 	
-// Méthodes :
 	// Pour chaque clé de l'array transmis, appelle le setter s'il existe :
 	public function checkAll(array $donnees){
 		foreach ($donnees as $key => $value){
-			// Construit le nom du setter :
 			$method = 'set'.($key);
-			// Si le setter de existe :
 			if (method_exists($this, $method)){
-			  // On appelle le setter.
 			  $this->$method($value);
 			}
 		}

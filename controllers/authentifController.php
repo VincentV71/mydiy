@@ -36,7 +36,7 @@ try {
 					$myUserManager->insert($user);
 					$_SESSION['inscriptionMsg'] = "Bravo ".$_POST['NOM_USER']." , vous êtes désormais inscrit";
 					$_SESSION['classMsg'] = "success";
-					header("Location: ../vues/inscription.php");
+					header("Location: ../vues/connexion.php");
 					}		
 				}
 			}

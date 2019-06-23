@@ -125,13 +125,11 @@ class RecetteValidator {
 	public function setQTE_TOT($qteTot){
 		if (!isset($qteTot)) throw new Exception("la valeur (".$this->_data_ctrl_class[6]["LEGEND"].") est obligatoire");
 		if (isset($qteTot)) {
-			if (strstr($qteTot, ",")){
-		   	 $qteTot = str_replace(",", ".", $qteTot); // remplace ',' par '.'
-		   	 $qteTot = (float)($qteTot);
-		    }
-	   		if (!preg_match("/".$this->_data_ctrl_class[6]["REGEX"]."/", $qteTot) || !(float)($qteTot)
-	   			|| (float)($qteTot)<$this->_data_ctrl_class[6]["MIN"] 
-	   			|| (float)($qteTot)>$this->_data_ctrl_class[6]["MAX"]) {
+	   		if (!preg_match("/".$this->_data_ctrl_class[6]["REGEX"]."/", $qteTot) || !(int)($qteTot)
+	   			|| (int)($qteTot)<$this->_data_ctrl_class[6]["MIN"] 
+	   			|| (int)($qteTot)>$this->_data_ctrl_class[6]["MAX"]
+	   			|| strlen($qteTot)<$this->_data_ctrl_class[6]["MINLENGTH"] 
+	   			|| strlen($qteTot)>$this->_data_ctrl_class[6]["MAXLENGTH"]) {
 				throw new Exception("la valeur (".$this->_data_ctrl_class[6]["LEGEND"]." = ".$qteTot.") n'est pas conforme");
 				return;
 		    }
@@ -179,15 +177,11 @@ class RecetteValidator {
 	    }
 	}
 
-// Méthodes :
 	// Pour chaque clé de l'array transmis, appelle le setter s'il existe :
 	public function checkAll(array $donnees){
 		foreach ($donnees as $key => $value){
-			// Récupère le idUser du setter correspondant à l'attribut.
 			$method = 'set'.($key);
-			// Si le setter correspondant existe.
 			if (method_exists($this, $method)){
-			  // On appelle le setter.
 			  $this->$method($value);
 			}
 		}

@@ -6,7 +6,6 @@ abstract class Manager {
   private $password = '';  // 
   private $bdd; // objet PDO
 
-   // Réinitialise la connexion au besoin :
   private function getBdd() {
       if ($this->bdd == null) {
         // Création de la connexion
@@ -35,7 +34,7 @@ abstract class Manager {
       $firstQuery = $myConnexion->prepare($sql1);
       $firstQuery->execute($params1);
 
-      // Si les requetes sont de type INSERT :
+      // Requetes de type INSERT :
       if(preg_match('/(INSERT|insert)/m', $sql1)) {
         // Récupération de l'ID_RECET en cours de création, insertion à l'index '1' de $newParams2 :
         $id_nouveau = $myConnexion->lastInsertId();
@@ -43,19 +42,19 @@ abstract class Manager {
         $secondQuery = $myConnexion->prepare($sql2);
         $secondQuery->execute($newParams2);
       }
-      // Si les requetes sont de type UPDATE :
+      // Requetes de type UPDATE :
       else {
         $secondQuery = $myConnexion->prepare($sql2);
         $secondQuery->execute($params2);
       } 
-      // Effectue la transaction:
+      
       $myConnexion->commit();
-      $myConnexion = null; //Ferme la connexion PDO
+      $myConnexion = null; 
     } 
 
     catch (PDOException $e) {
       $myConnexion->rollBack(); //Annule la transaction en cours
-      $myConnexion = null; //Ferme la connexion PDO
+      $myConnexion = null; 
       throw new Exception("une erreur d'insertion s'est produite") ;
     }
   }

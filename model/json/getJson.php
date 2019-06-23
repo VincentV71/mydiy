@@ -14,8 +14,6 @@ require __DIR__ . '../../managers/UserManager.php';
 	// Renvoie au format JSON les entrées d'une table de la BDD :
 	
 	if (isset($_GET['table'])){
-
-		// Instanciation du Manager :
 		$classManager = ($_GET['table']).'Manager';
 		$myObjectManager = new $classManager;
 

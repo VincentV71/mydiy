@@ -2,32 +2,6 @@
 
 class ParfumerManager extends Manager{
 
-  public function insert(Parfumer $parfumer){
-    // Requête préparée UPDATE :
-    $sql = "INSERT INTO parfumer (ID_RECET, ID_ARO, DOS_ARO) VALUES(?,?,?)";
-    $reqRetour = $this->executerRequete($sql, array(
-      $parfumer->idRecette(),
-      $parfumer->idArome(),
-      $parfumer->dos()
-      ));
-  }
-
-  public function delete(Parfumer $parfumer){
-    // Requête préparée DELETE.
-    $sql = "DELETE FROM parfumer WHERE ID_RECET =?";
-    $reqRetour = $this->executerRequete($sql, array($parfumer->idRecette() ));
-  }
-
-  public function update(Parfumer $parfumer){
-    // Requête préparée UPDATE :
-    $sql = "UPDATE parfumer SET ID_ARO=?, DOS_ARO=? where ID_RECET=?";
-    $reqRetour = $this->executerRequete($sql, array(
-      $parfumer->idArome(),
-      $parfumer->dos(),
-      $parfumer->idRecette()
-      ));
-  }
-
   public function select($idRecet){
     // Requête préparée SELECT avec une clause WHERE sur l'idRecette, retourne un objet PDO :
     $sql = "SELECT * FROM parfumer where ID_RECET=?";

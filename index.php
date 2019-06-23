@@ -39,7 +39,7 @@
 	<div class="jumbotron jumbotron-fluid text-center" >	
 		<div class="container">
 			<h1 class="display-3">E-liquide maker</h1>
-			<p class="lead ml-5 mr-5">MyDiy est un outil de gestion qui facilitera votre quotidien de Diyeur : vous pourrez calculer facilement les dosages de vos Diy grâce à nos fonctions, archiver et consulter vos recettes et leur avancement (steep), les commenter, les noter...  </p>
+			<p class="lead ml-5 mr-5">MyDiy est un outil de gestion qui facilitera votre quotidien de Diyeur : vous pourrez calculer facilement les dosages de vos Diy, archiver et consulter vos recettes et leur avancement, les commenter, les noter...  </p>
 			<div class="row justify-content-center">
 				<div class="col-md-4 col-lg-3 col-xl-3 mt-3">
 					<a href="vues/inscription.php" >

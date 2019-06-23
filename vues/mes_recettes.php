@@ -106,7 +106,7 @@ $nbRecetOn = $resRecetOn->rowCount();
             <option value="DOS_ARO">dosage</option>
             <option value="BASE.ID_BASE">type de base</option>
           </select>
-          <input type="submit" class="btn btn-secondary btn-sm" />
+          <input type="submit" class="btn btn-secondary btn-sm" value="Afficher"/>
         </form>
       </div>
     </div>

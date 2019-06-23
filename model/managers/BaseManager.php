@@ -13,7 +13,7 @@ class BaseManager extends Manager{
   }
 
   public function delete(Base $base){
-    // Requête préparée DELETE.
+    // Requête préparée DELETE :
     $sql = "DELETE FROM base WHERE ID_BASE =?";
     $reqRetour = $this->executerRequete($sql, array($base->id() ));
   }

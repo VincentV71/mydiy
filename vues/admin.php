@@ -269,7 +269,7 @@ else $idUser = $_SESSION['id'];
 					    </tr>
 					  </tbody>
 					</table>
-				</div>
+				</div>				
 		 	</form>
 	 	</div>
 	</div>

@@ -1,4 +1,4 @@
-<?php
+   <?php
 
 class UserManager extends Manager{
 

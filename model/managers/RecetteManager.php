@@ -106,10 +106,10 @@ class RecetteManager extends Manager{
     }
     return false;
   }
-  // from recetteManage :
+  
   public function getAllRecetUser($idUser, $aff, $order) {
     // Retourne les recettes d'un User : actives ou inactives ($aff), triées ($order) :
-    $sql = "SELECT *, base.DOS_PG, base.DOS_VG FROM recette INNER JOIN base ON recette.ID_base = base.ID_base INNER JOIN parfumer ON recette.ID_RECET = parfumer.ID_RECET INNER JOIN arome ON parfumer.ID_ARO = arome.ID_ARO WHERE ID_USER=? AND AFF_RECET=?  ORDER BY ".$order." ";
+    $sql = "SELECT *, base.DOS_PG, base.DOS_VG FROM recette INNER JOIN base ON recette.ID_BASE = base.ID_BASE INNER JOIN parfumer ON recette.ID_RECET = parfumer.ID_RECET INNER JOIN arome ON parfumer.ID_ARO = arome.ID_ARO WHERE ID_USER=? AND AFF_RECET=?  ORDER BY ".$order." ";
     $reqRetour = $this->executerRequete($sql, array(
       $idUser,
       $aff

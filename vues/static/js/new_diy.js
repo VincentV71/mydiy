@@ -35,15 +35,18 @@ monApp.controller('newDiyCtrl', function($scope, $http) {
 	    };
 
 	    $http.post("../controllers/new_DiyController.php", data)
-		 	.then(function (response) {
-		 		console.log(response.data);
-		 		$scope.msg = response.data;
+		 	.then(function (successResponse) {
+		 		$scope.msg = successResponse.data;
 		 		if ($scope.msg === 'success'){
 		 			$scope.msg = "Votre recette est désormais enregistrée";
 		 			$scope.msgClass = 'success';
 		 		}
 		 		else $scope.msgClass = 'danger';
 		 		$scope.resetForm();
+		 	},
+			function (errorResponse){
+		 		$scope.msg = "L'enregistrement a échoué suite à une erreur du serveur";
+		 		$scope.msgClass = 'danger';
 		 	});
 	};
 
@@ -52,7 +55,6 @@ monApp.controller('newDiyCtrl', function($scope, $http) {
 		if ($scope.aro && $scope.dos && $scope.totalQte && idBaseSelect
 			&& $scope.creaRecette && $scope.aroQte && $scope.baseQte
 			&& $scope.steep_pret && $scope.steep_prevu){
-			console.log ("le formulaire est OK");
 			$scope.postForm();
 		}
 		else {
@@ -120,6 +122,7 @@ monApp.controller('newDiyCtrl', function($scope, $http) {
 		    }
 		}
 		$scope.dos = parseFloat(resDosage);
+		$scope.pgChoice= 50;
  	} 
 
  	// Choix PG > renseigne l'id de la base sélectionnée
@@ -146,7 +149,6 @@ monApp.controller('newDiyCtrl', function($scope, $http) {
  			this.baseQte = this.totalQte - this.aroQte;
  			// calcul STEEP
  			this.steep_prevu = nbJdeSteep;
-
  			// Obtiens la date actuelle, convertit en millisecondes, puis ajoute NbjourSteep X 86400000 ms/jour. 
  			// Pour hydrater this.steep_pret. Nouvel Objet Date d'après la nouvelle valeur, conversion en LocaleSTRING
  			var prevu = new Date().getTime() + (86400000 * nbJdeSteep);

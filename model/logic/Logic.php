@@ -2,34 +2,10 @@
 
 class Logic {
 
-	// Pour toutes les clés de l'array reçu qui contiennent un ID, vérifie que la valeur existe en 
-	// BDD ; renvoie true si tous les ID transmis existent, sinon lève une exception : 
-	public static function allIdExist(array $donnees){
-		$pk = array ("Arome"=>"ID_ARO", "User"=>"ID_USER", "Recette"=>"ID_RECET", "Base"=>"ID_BASE", "Prix"=>"ID_PRIX", "Avis"=>"ID_AVIS");
-		foreach ($donnees as $key => $value) {
-			if (explode("_", $key)){
-				$keyExploded = explode("_", $key);
-				// Si la clé commence par "ID" :
-				if ($keyExploded[0] == "ID"){
-					foreach ($pk as $libelleTable => $champ) {
-						if ($key == $champ){
-							// Instanciation du Manager :
-							$classManager = ($libelleTable).'Manager';
-							$myObjectManager = new $classManager;
-							// Vérifie l'existance de l'ID :
-							$idExist = $myObjectManager->checkId($value);
-							if ($idExist == false) throw new Exception("l'ID (table ".$libelleTable.") que vous avez saisi n'existe pas actuellement.");
-						}
-					}
-				}
-			}
-		}
-		return true; // tous les ID existent en BDD !
-	}
-
-	// Vérifie la validité d'une recette (correspondance des quantités et du dosage) 
-	// lors d'une CREATION : lève une exception si non-conformité des quantités ou du dosage, void en cas de succès;
-	// lors d'une MODIFICATION : calcule les nouvelles proportions (base et arome), met à jour l'objet Recette et le renvoie en cas de succès;
+	/* Vérifie la validité d'une recette (correspondance des quantités et du dosage) 
+	Lors d'une CREATION : lève une exception si non-conformité des quantités ou du dosage, void en cas de succès;
+	Lors d'une MODIFICATION : calcule les nouvelles proportions (base et arome), met à jour l'objet Recette et le renvoie en cas de succès;
+	*/
 	public static function recetteValid(array $data, Recette $recet){
 		// CREATION d'une Recette :
 		if (isset($data['QTE_ARO']) && isset($data['QTE_BAS']) && isset($data['QTE_TOT']) && isset($data['DOS_ARO'])){
@@ -59,7 +35,8 @@ class Logic {
 		}
 	}
 
-	// Calcule le dosage d'après les quantités d'une recette ; met à jour l'objet Parfumer et le renvoie en cas de succès :
+	/* Calcule le dosage d'après les quantités d'une recette ; Met à jour l'objet Parfumer et le renvoie en cas de succès :
+	*/
 	public static function dosageValid(array $data, Recette $recet, Parfumer $parfumer){
 		// MODIFICATION d'une Recette :
 		if (isset($data['ATTRIBUTE'])){
@@ -78,14 +55,14 @@ class Logic {
 
 	// Vérifie que la somme VG et PG d'une base est égale à 100 :
 	public static function baseValid(array $data, Base $base){
-		// Appelé lors de la CREATION d'une Base :
+		// CREATION d'une Base :
 		if (isset($data['DOS_PG']) && isset($data['DOS_VG']) ){
 			$pg = (int)($data['DOS_PG']) ;
 			$vg = (int)($data['DOS_VG']) ;
 			if ( $pg + $vg != 100 ) throw new Exception ("la somme des proportions 'VG' et 'PG' n'est pas égale à 100");
 		}
 
-		// Appelé lors de la MODIFICATION d'une Base :
+		// MODIFICATION d'une Base :
 		if (isset($data['ATTRIBUTE'])){
 			$pg = (int)($base->pg());
 			$vg = (int)($base->vg());
@@ -99,6 +76,32 @@ class Logic {
 			}
 			return $base;
 		}
+	}
+
+	/* Pour toutes les clés de l'array reçu qui contiennent un ID, vérifie que la valeur existe en
+	BDD ; renvoie true si tous les ID transmis existent, sinon lève une exception :
+	*/ 
+	public static function allIdExist(array $donnees){
+		$pk = array ("Arome"=>"ID_ARO", "User"=>"ID_USER", "Recette"=>"ID_RECET", "Base"=>"ID_BASE", "Prix"=>"ID_PRIX", "Avis"=>"ID_AVIS");
+		foreach ($donnees as $key => $value) {
+			if (explode("_", $key)){
+				$keyExploded = explode("_", $key);
+				// Si la clé commence par "ID" :
+				if ($keyExploded[0] == "ID"){
+					foreach ($pk as $libelleTable => $champ) {
+						if ($key == $champ){
+							// Instanciation du Manager :
+							$classManager = ($libelleTable).'Manager';
+							$myObjectManager = new $classManager;
+							// Vérifie l'existance de l'ID :
+							$idExist = $myObjectManager->checkId($value);
+							if ($idExist == false) throw new Exception("l'ID (table ".$libelleTable.") que vous avez saisi n'existe pas actuellement.");
+						}
+					}
+				}
+			}
+		}
+		return true; // tous les ID existent en BDD !
 	}
 }
 ?>

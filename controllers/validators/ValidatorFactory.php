@@ -10,13 +10,13 @@ require __DIR__ . '/UserValidator.php';
 class ValidatorFactory {
 
   public static function control (array $donnees, $table) {
-    // Recupère les définitions du modèle de la classe :
-    $model_def_all = json_decode(file_get_contents(__DIR__ .'../../../model/json/forAdmin.json'), true);
+    $model_def_all = json_decode(file_get_contents(__DIR__ .'../../../model/json/dataDefinitions.json'), true);
     $index_table;
     for ($i=0; $i < sizeof($model_def_all); $i++){
       if ($model_def_all[$i]['label'] == strtoupper($table))
         $index_table = (int)$i;
     }
+    // Définitions du modèle de la classe :
     $model_def_class = $model_def_all[$index_table]['attribut'];
 
     // Instancie le validator associé à la table :

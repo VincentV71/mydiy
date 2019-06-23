@@ -40,7 +40,7 @@ monAppAdmin.controller('adminCtrl', function($scope, $http) {
 	};
 
 	// Récupération des datas de contrôle en JSON :
-	$http.get("../model/json/forAdmin.json")
+	$http.get("../model/json/dataDefinitions.json")
 	 .then(function (retour) {
 	 	$scope.dataAdmin = retour.data;
 	});
@@ -308,22 +308,26 @@ monAppAdmin.controller('adminCtrl', function($scope, $http) {
  			$scope.tagErrorModif = $scope.tag;
  		}
  	}
-	// Envoi du formulaire depuis verif() :
+	// Envoi du formulaire depuis verif() :	
 	$scope.postForm = function(){
 		if (dataToPost){
 	    	$http.post("../controllers/adminController.php", dataToPost)
-		 	.then(function (response) {
-		 		// console.log(response.data);
-		 		$scope.msgForm = response.data;
+		 	.then(function (successResponse) {
+		 		$scope.msgForm = successResponse.data;
 		 		if ($scope.msgForm === 'success'){
 		 			$scope.msgForm = "Votre enregistrement a été effectué";
 		 			$scope.msgFormClass = 'success';
 		 			$scope.resetFormAdmin();
 		 		}
 		 		else $scope.msgFormClass = 'danger';
+		 	}, 
+		 	function (errorResponse){
+		 		$scope.msgForm = "L'enregistrement a échoué suite à une erreur du serveur";
+		 		$scope.msgFormClass = 'danger';
 		 	});
 	 	}
 	};
+
 	// Verification du formulaire :
 	$scope.verif = function() {
 		if ($scope.choix_action && $scope.choix_table){
